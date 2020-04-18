@@ -1,13 +1,19 @@
 package estatehub.model;
 
 public abstract class User {
-    private String readableName;
+    private String displayName;
 
     User(String Name){
-        readableName = Name;
+        displayName = Name;
     }
 
     public String getName(){
-        return readableName;
+        return displayName;
     }
+
+    public void setName(String name) {
+        displayName = name;
+    }
+
+    public abstract boolean isOwner();
 }

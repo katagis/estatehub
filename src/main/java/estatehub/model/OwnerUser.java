@@ -10,4 +10,9 @@ public class OwnerUser extends User{
         // Default owner
         super("Corona Smith");
     }
+
+    @Override
+    public boolean isOwner() {
+        return true;
+    }
 }

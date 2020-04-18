@@ -10,4 +10,8 @@ public class ManagerUser extends User{
     public ManagerUser(){
         super("Icefox & Co.");
     }
+
+    public boolean isOwner(){
+        return false;
+    }
 }
