@@ -19,6 +19,7 @@ public class Database {
     }
 
     private Vector<User> users;
+    private Vector<Estate> estates;
 
     Database() {
         users = new Vector<User>();
@@ -44,7 +45,7 @@ public class Database {
     public static User getUserOrLogin(HttpSession session) {
         User user = null;
         user = getUser(session);
-        if (user == null){
+        if (user == null) {
             user = getInstance().users.get(0);
             session.setAttribute("id", 0);
         }
@@ -70,6 +71,10 @@ public class Database {
     // Grabs the manager user with this session, returns a default manager user on
     // errors
     public static ManagerUser getManagerUser(HttpSession session) {
+        if (session == null) {
+            return (ManagerUser) getInstance().users.get(1);
+        }
+        
         ManagerUser user = null;
         try {
             user = (ManagerUser) getUser(session);
@@ -82,5 +87,9 @@ public class Database {
         }
 
         return user;
+    }
+
+    public static Estate getEstate(int estateId) {
+        return new Estate();
     }
 }

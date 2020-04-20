@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>Welcome to EstateHub</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="my-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Test table -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> Money </th>
+                                    <th> Manager </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:if="${offers.empty}">
+                                    <td colspan="2"> No Offers Available </td>
+                                </tr>
+                                <tr th:each="offer : ${offers}">
+                                    <td><span th:text="${offer.money}"> Money </span></td>
+                                    <td><span th:text="${offer.manager.name}"> Manager Name </span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
