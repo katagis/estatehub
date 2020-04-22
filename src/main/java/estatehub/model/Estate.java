@@ -7,6 +7,8 @@ public class Estate {
     private String location;
     private Vector<Offer> offers;
 
+    private int id = 1;
+
     public String getName() {
         return name;
     }
@@ -15,12 +17,16 @@ public class Estate {
         return location;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public Vector<Offer> getOffers() {
         return offers;
     }
     
-    Estate() {
-        name = "Tester Estate";
+    Estate(String name) {
+        this.name = name;
         location = "Patras, Center";
         offers = new Vector<Offer>();
         offers.add(new Offer());

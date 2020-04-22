@@ -6,11 +6,19 @@ public class Offer {
     private int money = 3000;
     private int seasons = 1;
     private ManagerUser manager;
-    
-    Offer() {
-        manager = Database.getManagerUser(null);
-        Random r = new Random();
-        money = r.nextInt(1000) + 1000;
+    private String comment;
+    private int estateId;
+
+    public Offer() {
+    }
+
+    public Offer(int estateId) {
+        this.estateId = estateId;
+        this.seasons = 1;
+    }
+
+    public void setEstateId(int estateId) {
+        this.estateId = estateId;
     }
 
     public int getMoney() {
@@ -21,7 +29,27 @@ public class Offer {
         return seasons;
     }
 
+    public String getComment() {
+        return comment;
+    }
+
     public ManagerUser getManager() {
         return manager;
+    }
+
+    public int getEstateId() {
+        return estateId;
+    }
+
+    public void setMoney(int money){
+        this.money = money;
+    }
+
+    public void setSeasons(int seasons){
+        this.seasons = seasons;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>Welcome to EstateHub</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="my-5">
+            <div class="container">
+                <div class="col-md-12" style="margin-top: -2em;">
+                    <h3>Offers for <span th:text="${estate.name}">Estate Name</span></h3>
+                </div>
+                <div style="border-bottom:1px solid rgb(170, 170, 170);height:100%;margin: 4px;"></div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="control-box p-3">
+                            <img src="https://www.sportcontact.me/images/image_placeholder.jpg" style="width: 100%">
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <h1 th:if="${offers.empty}">
+                            No offers are available for this estate.
+                        </h1>
+                        <ul class="list-group list-group-flush row">
+                            <a href="#" th:each="offer : ${offers}"
+                                class="list-group-item list-group-item-action row d-flex">
+
+                                <div class="col-lg-10">
+                                    <h4 class="mb-1" th:text="${offer.manager.name}">Manager Name</h4>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi enim, deserunt
+                                        quo quos earum commodi eaque laborum quaerat quam laudantium fuga eum quibusdam
+                                        asperiores magnam dolores quas fugiat cumque dolore! Lorem, ipsum dolor sit amet
+                                        consectetur adipisicing elit. Hic odio quisquam delectus reiciendis illo
+                                        pariatur voluptatem necessitatibus? Quasi quae nam modi accusantium quo quam
+                                        harum optio odit? Sequi, asperiores cum.</p>
+                                </div>
+
+                                <div class="col-lg-2">
+                                    <h4><span th:text="${offer.money}">50000</span> &euro;</h4>
+                                    <p class="text-muted"><span th:text="${offer.seasons}"></span> season<span th:if="${offer.seasons > 1}">s</span></p>
+                                        <button type="button" class="align-self-end btn btn-secondary ">View
+                                            Offer</button>
+                                </div>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

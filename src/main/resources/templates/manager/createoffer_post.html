@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>Welcome to EstateHub</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="my-5">
+            <div class="container">
+                <div class="col-md-12" style="margin-top: -2em;">
+                    <h3>Confirm offer for <span th:text="${estate.name}">Estate Name</span></h3>
+                </div>
+                <div style="border-bottom:1px solid rgb(170, 170, 170);height:100%;margin: 4px;"></div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="control-box p-3">
+                            <img src="https://www.sportcontact.me/images/image_placeholder.jpg" style="width: 100%">
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <p>Money: <span th:text="${offer.money}"></p>
+                        <p>Seasons: <span th:text="${offer.seasons}"></p>
+                        <p>Comment: <span th:text="${offer.comment}"></p>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

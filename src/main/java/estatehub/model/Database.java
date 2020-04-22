@@ -25,6 +25,10 @@ public class Database {
         users = new Vector<User>();
         users.add(new OwnerUser());
         users.add(new ManagerUser());
+
+        estates = new Vector<Estate>();
+        estates.add(new Estate("Tester 1"));
+        estates.add(new Estate("Real Estate"));
     }
 
     // Grabs the user with this session, returns null on errors
@@ -90,6 +94,6 @@ public class Database {
     }
 
     public static Estate getEstate(int estateId) {
-        return new Estate();
+        return getInstance().estates.get(estateId);
     }
 }

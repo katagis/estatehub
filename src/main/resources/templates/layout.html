@@ -34,18 +34,9 @@
             </div>
         </div>
     </nav>
- <!--   <div th:replace="fragments/footer :: ${#authentication.principal.isAdmin()} ? 'footer-admin' : 'footer'">
-        &copy; 2013 The Static Templates
-    </div>
--->
-
     <div th:replace="${user.isOwner()} ? 'subnavs/ownernav' : 'subnavs/managernav' ">
 
     </div>
-    <!-- <div th:replace="subnavs/ownernav :: ${#isOwner} ? ownernav : managernav">
-
-    </div> -->
-
     <!-- Content Section -->
     <section layout:fragment="content">
         <p>This is filled by the content template.</p>
@@ -60,8 +51,6 @@
         </div>
     </footer>
 
-    <!-- Optional Section -->
-    <th:block layout:fragment="optional" />
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

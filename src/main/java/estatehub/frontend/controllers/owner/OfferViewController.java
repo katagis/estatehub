@@ -1,4 +1,4 @@
-package estatehub.frontend.controllers.user;
+package estatehub.frontend.controllers.owner;
 
 import java.util.Optional;
 import java.util.Vector;
@@ -17,16 +17,7 @@ import estatehub.model.OwnerUser;
 @Controller
 public class OfferViewController {
 
-    @GetMapping("/user/offers")
-    public String allOffers(HttpSession session, Model model) {
-        OwnerUser manager = Database.getOwnerUser(session);
-
-        model.addAttribute("user", manager);
-        return "index";
-    }
-
-
-    @GetMapping("/user/offersfor")
+    @GetMapping("/owner/offersfor")
     public String offersFor(HttpSession session, Model model, Optional<Integer> eid) {
         if (!eid.isPresent()) {
             return "redirect:/user/offers";
@@ -40,7 +31,8 @@ public class OfferViewController {
         model.addAttribute("estate", estate);
         model.addAttribute("offers", offers);
 
-        return "offersfor";
+
+        return "owner/offersfor";
     }
 
 }
