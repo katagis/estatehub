@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,11 @@ namespace EstateHub
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// Main window is responsible for handling navigation calls, search requests and user changes (simulated login, logouts)
     public partial class MainWindow : Window
     {
+        public static MainWindow Instance { get => App.Instance.MainWindow as MainWindow; }
+
         public MainWindow() {
             InitializeComponent();
         }

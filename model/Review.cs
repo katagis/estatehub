@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EstateHub.model
 {
-    class Review
+    public class Review
     {
         public string Comment { get; }
         public int Stars { get; }

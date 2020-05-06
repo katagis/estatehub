@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EstateHub.model
 {
-    class SearchResults
+    public class SearchResults
     {
         private List<Estate> Estates;
         private List<Advertisement> Advertisements;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EstateHub.model
 {
-    class Deal
+    public class Deal
     {
         public int ExpirationYear { get; }
     }

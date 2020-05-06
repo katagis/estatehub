@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EstateHub.model
 {
-    class Advertisement
+    public class Advertisement
     {
         public Estate ForEstate { get; }
         public int EndingSeason { get; }

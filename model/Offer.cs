@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EstateHub.model
 {
-    class Offer 
+    public class Offer 
     {
         public Manager Offerer { get; }
         public Estate estate { get; }

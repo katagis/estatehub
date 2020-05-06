@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EstateHub.model
 {
-    class User
+    public class User
     {
         public string Username { get; }
         public List<Notification> Notifications { get; }
