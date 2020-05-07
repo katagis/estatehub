@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EstateHub.model;
 
 namespace EstateHub
 {
@@ -24,8 +25,14 @@ namespace EstateHub
     {
         public static MainWindow Instance { get => App.Instance.MainWindow as MainWindow; }
 
+        private static readonly string defaultSearchTxt = "Search for estates, places...";
         public MainWindow() {
             InitializeComponent();
+            ui_search.Text = defaultSearchTxt;
+            ui_search.GotFocus += Ui_search_GotFocus;
+            ui_search.LostFocus += Ui_search_LostFocus;
+
+            InitializeForUser(App.Instance.CurrentUser);
         }
 
         private void homeBtn_Click(object sender, RoutedEventArgs e) {
@@ -36,5 +43,42 @@ namespace EstateHub
             ui_mainView.Source = new Uri(view, UriKind.Relative);
         }
 
+        private void InitializeForUser(User user) {
+
+        }
+
+        //
+        // Search bar controller
+        //
+        public void PerformSearch(string term) {
+            // TODO: perform search
+            MessageBox.Show("Searching for: " + term);
+        }
+
+
+        //
+        // Search bar View Section
+        //
+        private void Ui_search_GotFocus(object sender, RoutedEventArgs e) {
+            if (ui_search.Text == defaultSearchTxt) {
+                ui_search.Text = "";
+                ui_search.Foreground = new SolidColorBrush(Colors.Black);
+            }
+        }
+
+        private void Ui_search_LostFocus(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrWhiteSpace(ui_search.Text)) {
+                ui_search.Text = defaultSearchTxt;
+                ui_search.Foreground = new SolidColorBrush(Colors.LightSlateGray);
+            }
+        }
+
+        private void Ui_search_KeyDown(object sender, KeyEventArgs e) {
+            if (e.Key == Key.Enter) {
+                PerformSearch(ui_search.Text.Trim());
+            }
+        }
+
+        
     }
 }

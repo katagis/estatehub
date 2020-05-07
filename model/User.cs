@@ -10,6 +10,11 @@ namespace EstateHub.model
         public string Username { get; }
         public List<Notification> Notifications { get; }
         
+        public User(string name) {
+            Username = name;
+            Database.RegisterUser(this);
+        }
+
         void RegisterNotification(Notification notification) {
             Notifications.Add(notification);
         }               

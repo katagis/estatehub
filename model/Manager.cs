@@ -8,7 +8,11 @@ namespace EstateHub.model
     {
         public List<Offer> Offers { get; }
         public List<Estate> ViewHistory { get; }
-        public List<Review> Reviews { get; }        
+        public List<Review> Reviews { get; }       
+        
+        public Manager(string name) : base(name) {
+            Database.RegisterManager(this);
+        }
     }
 
 }

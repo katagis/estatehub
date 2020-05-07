@@ -16,16 +16,15 @@ namespace EstateHub
     public partial class App : Application
     {
         public static App Instance { get => Current as App; }
-        public User CurrentUser { 
-            get => CurrentUser; 
-            set {
-                var oldUser = CurrentUser;
-                CurrentUser = value;
-                UserChanged(oldUser, CurrentUser);
-            }
+        public User CurrentUser { get; private set; }
+
+        public void ChangeUser(User newUser) {
+            var oldUser = CurrentUser;
+            CurrentUser = newUser;
+            UserChanged(oldUser, newUser);
         }
 
-        void UserChanged(User oldUser, User newUser) {
+        private void UserChanged(User oldUser, User newUser) {
             // TODO: Notify the required views.
         }
 
