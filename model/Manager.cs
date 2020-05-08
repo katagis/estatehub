@@ -6,10 +6,10 @@ namespace EstateHub.model
 {
     public class Manager : User
     {
-        public List<Offer> Offers { get; }
-        public List<Estate> ViewHistory { get; }
-        public List<Review> Reviews { get; }       
-        
+        public List<Offer> Offers { get; } = new List<Offer>();
+        public List<Estate> ViewHistory { get; } = new List<Estate>();
+        public List<Review> Reviews { get; } = new List<Review>();
+
         public Manager(string name) : base(name) {
             Database.RegisterManager(this);
         }

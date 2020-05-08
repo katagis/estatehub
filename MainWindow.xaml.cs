@@ -31,12 +31,12 @@ namespace EstateHub
             ui_search.Text = defaultSearchTxt;
             ui_search.GotFocus += Ui_search_GotFocus;
             ui_search.LostFocus += Ui_search_LostFocus;
-
+            ui_userCombo.ItemsSource = Database.Users;
             InitializeForUser(App.Instance.CurrentUser);
         }
 
         private void homeBtn_Click(object sender, RoutedEventArgs e) {
-            ChangeView("HomePage.xaml");
+            ChangeView("views/RegisterEstateView.xaml");
         }
 
         public void ChangeView(string view) {
@@ -79,6 +79,8 @@ namespace EstateHub
             }
         }
 
-        
+        private void Ui_userCombo_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            App.Instance.ChangeUser(ui_userCombo.SelectedItem as User);
+        }
     }
 }

@@ -18,6 +18,16 @@ namespace EstateHub
         public static App Instance { get => Current as App; }
         public User CurrentUser { get; private set; }
 
+        App() {
+            // Insert our dummy data...
+            new Manager("Icefox & Co.");
+            new Manager("At Sea Management");
+            
+            new User("Corona Smith");
+            new User("Software Engineer");
+            new User("Alexander Foobar");
+        }
+
         public void ChangeUser(User newUser) {
             var oldUser = CurrentUser;
             CurrentUser = newUser;
