@@ -22,21 +22,19 @@ namespace EstateHub
             // Insert our dummy data...
             new Manager("Icefox & Co.");
             new Manager("At Sea Management");
-            
-            new User("Corona Smith");
-            new User("Software Engineer");
-            new User("Alexander Foobar");
+
+            CurrentUser =  new Owner("Corona Smith");
+            new Owner("Software Engineer");
+            new Owner("Alexander Foobar");
+
         }
 
         public void ChangeUser(User newUser) {
-            var oldUser = CurrentUser;
             CurrentUser = newUser;
-            UserChanged(oldUser, newUser);
+            (MainWindow as MainWindow)?.InitializeForUser(newUser);
         }
 
-        private void UserChanged(User oldUser, User newUser) {
-            // TODO: Notify the required views.
-        }
+        
 
         public Manager GetManager() {
             if (!(CurrentUser is Manager)) {

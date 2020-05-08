@@ -8,8 +8,8 @@ namespace EstateHub.model
     public class Notification
     {
         public User ForUser { get; }
-        public string Text { get; }
+        public string Text { get; set; }
 
-        private delegate void OnYes();
+        private delegate void OnFollow();
     }
 }
