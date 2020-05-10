@@ -34,12 +34,12 @@
             <TextBlock x:Name="textBlock4" HorizontalAlignment="Right" Text="Region:" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2"/>
             <TextBlock x:Name="textBlock5" HorizontalAlignment="Right" Text="Postal Code:" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3"/>
             <TextBlock x:Name="textBlock6" HorizontalAlignment="Right" Text="Address:" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="4"/>
-            <TextBox x:Name="ui_formTitle"          Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="TextBox" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
-            <TextBox x:Name="ui_formDescription"    Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Text="TextBox" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
-            <TextBox x:Name="ui_formRegion"         Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Text="TextBox" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
-            <TextBox x:Name="ui_formPostalCode"     Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Text="TextBox" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
-            <TextBox x:Name="ui_formAddress"        Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Text="TextBox" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
-            <Button x:Name="button" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Margin="45,5,45,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0">
+            <TextBox x:Name="ui_formTitle"          Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
+            <TextBox x:Name="ui_formDescription"    Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Text="" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
+            <TextBox x:Name="ui_formRegion"         Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Text="" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
+            <TextBox x:Name="ui_formPostalCode"     Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Text="" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
+            <TextBox x:Name="ui_formAddress"        Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Text="" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
+            <Button x:Name="ui_submit" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Margin="45,5,45,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0" Click="ui_submit_Click">
                 <TextBlock x:Name="textBlock" Foreground="White" Text="Submit Estate"/>
             </Button>
         </Grid>

@@ -18,15 +18,19 @@ namespace EstateHub
     /// </summary>
     public partial class SelectionPage : Page
     {
-        public SelectionPage()
-        {
+        public SelectionPage() {
             InitializeComponent();
         }
 
-        private void butto2n_Click(object sender, RoutedEventArgs e)
-        {
-            (Application.Current.MainWindow as MainWindow).ChangeView("Selection2.xaml");
-            
+        private void ui_submit_Click(object sender, RoutedEventArgs e) {
+            string title = ui_formTitle.Text;
+            string desc = ui_formDescription.Text;
+            string region = ui_formDescription.Text;
+            string postal = ui_formPostalCode.Text;
+            string address = ui_formAddress.Text;
+            // TODO: Check for duplicate location, validate all input
+
+           MessageBox.Show("Error message.", "Register Estate", MessageBoxButton.OK);
         }
     }
 }

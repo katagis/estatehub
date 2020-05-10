@@ -31,7 +31,7 @@ namespace EstateHub
         // A bit ugly requires up-cast
         public static readonly List<(string Title, string ViewPath)> navViews_Owner = new List<(string, string)>{
                 ("Register Estate", "views/owner/RegisterEstateView.xaml"),
-                ("Current Offers" , "views/owner/CurrentOffersView.xaml"),
+                ("View Offers"    , "views/owner/ViewAcceptOffer.xaml"),
                 ("My Estates"     , "views/owner/MyEstatesView.xaml"),
         };
 
@@ -58,7 +58,13 @@ namespace EstateHub
         public void ChangeView(string view) {
             // Explicitly reload the component of the view to "refresh" the page
             Uri resource = new Uri(view, UriKind.Relative);
-            ui_mainView.Content = Application.LoadComponent(resource);
+            try {
+                ui_mainView.Content = Application.LoadComponent(resource);
+            }
+            catch {
+
+            }
+            
         }
 
         private void UpdateNavFromList(List<(string Title, string ViewPath)> navViewList) {
