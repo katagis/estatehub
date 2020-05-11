@@ -12,5 +12,7 @@ namespace EstateHub.model
         public List<Offer> ActiveOffers { get; } = new List<Offer>();
         public int ViewCount { get; }
         public Advertisement Advertisement{ get; }
+
+        public string Title { get; set; } = "Ceid Estate";
     }
 }
