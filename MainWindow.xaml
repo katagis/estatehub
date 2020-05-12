@@ -29,9 +29,10 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Button x:Name="ui_homeBtn" Content="EstateHub" Click="homeBtn_Click" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold" Background="{x:Null}">
+            <Button x:Name="ui_homeBtn" Click="homeBtn_Click" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold" Background="{x:Null}">
+                <Image x:Name="image" Source="/images/logo.png" Stretch="Uniform" VerticalAlignment="Stretch" Height="36"/>
 
-                            </Button>
+            </Button>
             <Grid x:Name="SearchGrid" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*"/>

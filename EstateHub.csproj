@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="images\estate-default_100.jpg" />
     <None Remove="images\estate-default_842.jpg" />
+    <None Remove="images\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +17,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\estate-default_842.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
