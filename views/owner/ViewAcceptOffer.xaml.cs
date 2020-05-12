@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -35,6 +36,7 @@ namespace EstateHub.views.owner
             }
             if (!foundEstates) {
                 MessageBox.Show("No estates without deals found.");
+                MainWindow.Instance.ChangeView("views/MainMenu.xaml");
             }
         }
 

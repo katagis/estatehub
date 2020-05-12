@@ -40,6 +40,9 @@ namespace EstateHub
                 ("Pending Offers"       , "views/manager/PendingOffersView.xaml"),
         };
 
+        private bool isRedirecting = false;
+        private string nextRedirectionView = "";
+
 
         public MainWindow() {
             var defaultUser = App.Instance.CurrentUser;
@@ -56,15 +59,27 @@ namespace EstateHub
         }
 
         public void ChangeView(string view) {
+            if (isRedirecting) {
+                nextRedirectionView = view;
+                return;
+            }
+            
+            isRedirecting = true;
             // Explicitly reload the component of the view to "refresh" the page
             Uri resource = new Uri(view, UriKind.Relative);
             try {
                 ui_mainView.Content = Application.LoadComponent(resource);
             }
             catch {
-
+                MessageBox.Show("View not found: " + view);
             }
-            
+            isRedirecting = false;
+
+            if (!string.IsNullOrWhiteSpace(nextRedirectionView)) {
+                var redirection = nextRedirectionView;
+                nextRedirectionView = "";
+                ChangeView(redirection);
+            }
         }
 
         private void UpdateNavFromList(List<(string Title, string ViewPath)> navViewList) {
