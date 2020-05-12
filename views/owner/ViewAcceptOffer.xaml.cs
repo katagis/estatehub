@@ -24,11 +24,11 @@ namespace EstateHub.views.owner
             InitializeComponent();
 
             var o = App.GetCurrentOwner();
-            
 
+            ui_estateList.Children.Clear();
             bool foundEstates = false;
             foreach (var estate in o.Estates){
-                if (!(estate.CurrentDeal is null)) {
+                if (estate.CurrentDeal is null) {
                     // TODO: Handle 0 offers
                     ui_estateList.Children.Add(new EstateElementControl(estate, "View " +  estate.ActiveOffers.Count + " offers", OnOfferSelected));
                     foundEstates = true;

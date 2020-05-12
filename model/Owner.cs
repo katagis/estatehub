@@ -11,6 +11,14 @@ namespace EstateHub.model
 
         public Owner(string name) : base(name) {
             Database.RegisterOwner(this);
+            AddDummyEstates();
+        }
+
+        public void AddDummyEstates() {
+            Random r = new Random();
+            for (int i = 0; i < 4; i++) {
+                Estates.Add(new Estate() { Title = "Estate " + r.Next() + "" });
+            }
         }
     }
 }
