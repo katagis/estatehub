@@ -50,7 +50,7 @@ namespace EstateHub
             ui_search.Text = defaultSearchTxt;
             ui_search.GotFocus += Ui_search_GotFocus;
             ui_search.LostFocus += Ui_search_LostFocus;
-            ui_userCombo.ItemsSource = Database.Users;
+            ui_userCombo.ItemsSource = Estatehub.Users;
             ui_userCombo.SelectedItem = defaultUser;
         }
 

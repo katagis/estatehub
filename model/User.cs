@@ -13,7 +13,7 @@ namespace EstateHub.model
         
         public User(string name) {
             Username = name;
-            Database.RegisterUser(this);
+            Estatehub.RegisterUser(this);
         }
 
         void RegisterNotification(Notification notification) {

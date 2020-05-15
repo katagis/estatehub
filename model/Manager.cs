@@ -11,7 +11,7 @@ namespace EstateHub.model
         public List<Review> Reviews { get; } = new List<Review>();
 
         public Manager(string name) : base(name) {
-            Database.RegisterManager(this);
+            Estatehub.RegisterManager(this);
         }
     }
 

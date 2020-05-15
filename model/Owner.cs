@@ -10,7 +10,7 @@ namespace EstateHub.model
         public List<Estate> Estates { get; } = new List<Estate>();
 
         public Owner(string name) : base(name) {
-            Database.RegisterOwner(this);
+            Estatehub.RegisterOwner(this);
             AddDummyEstates();
         }
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EstateHub.model
 {
-    class Database
+    class Estatehub
     {
         public static List<User> Users { get; private set; } = new List<User>();
         public static List<Owner> Owners { get; private set; } = new List<Owner>();
