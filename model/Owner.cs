@@ -17,8 +17,28 @@ namespace EstateHub.model
         public void AddDummyEstates() {
             Random r = new Random();
             for (int i = 0; i < 4; i++) {
-                Estates.Add(new Estate() { Title = "Estate " + r.Next() + "" });
+                var e = new Estate() { Title = "Estate " + r.Next() + "" };
+                Estates.Add(e);
+
+                Random random = new Random();
+
+                int num = random.Next(0, 5);
+                for (int j = 0; j < num; j++) {
+                    int index = random.Next(0, Estatehub.Managers.Count - 1);
+                    e.ActiveOffers.Add(new Offer() { Money = random.Next(5000, 50000), EndingSeason = 2, estate = e, Offerer = Estatehub.Managers [index] });
+                }
             }
+        }
+
+        public List<Estate> GetUnadvertisedEstates() {
+            // TODO:
+            return new List<Estate>();
+        }
+
+        // Estates that are not under a deal
+        public List<Estate> FindFreeEstates() {
+            // TODO:
+            return new List<Estate>();
         }
     }
 }

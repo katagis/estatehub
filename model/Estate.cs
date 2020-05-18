@@ -14,5 +14,26 @@ namespace EstateHub.model
         public Advertisement Advertisement{ get; }
 
         public string Title { get; set; } = "Ceid Estate";
+
+
+        public bool MatchesTerms(string terms) {
+            return true; // TODO:
+        }
+
+        public void IncrementViewCount() {
+            // TODO:
+        }
+
+        public Offer GetCurrentOfferFrom(Manager manager) {
+            return null; // TODO:
+        }
+
+        public bool IsBeingAdvertised() {
+            return !(Advertisement is null);
+        }
+
+        public void AddAdvertisement(Advertisement newadvertisement) {
+            // TODO:
+        }
     }
 }

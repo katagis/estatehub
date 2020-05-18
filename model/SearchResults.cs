@@ -8,5 +8,14 @@ namespace EstateHub.model
     {
         private List<Estate> Estates;
         private List<Advertisement> Advertisements;
+
+
+        public bool IsEmpty() {
+            return true; // TODO:
+        }
+
+        public void Sort() {
+
+        }
     }
 }

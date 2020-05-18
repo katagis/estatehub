@@ -6,11 +6,14 @@ namespace EstateHub.model
 {
     public class Offer 
     {
-        public Manager Offerer { get; }
-        public Estate estate { get; }
+        public Manager Offerer { get; set; }
+        public Estate estate { get; set; }
         public int EndingSeason;
         public int Money;
 
+        public void AcceptOffer() {
+            // TODO:
+        }
              
     }
 }

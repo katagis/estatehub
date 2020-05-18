@@ -13,6 +13,10 @@ namespace EstateHub.model
         public Manager(string name) : base(name) {
             Estatehub.RegisterManager(this);
         }
+
+        Review GetReviewFrom(Owner owner) {
+            return null; // TODO:
+        }
     }
 
 }
