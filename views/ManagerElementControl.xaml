@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="EstateHub.views.EstateElementControl"
+﻿<UserControl x:Class="EstateHub.views.ManagerElementControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -18,21 +18,15 @@
                         <GradientStop Color="#4CFFFFFF" Offset="0"/>
                     </LinearGradientBrush>
                 </Grid.Background>
-            <DockPanel Height="86">
-                <Border Width="86" Height="86" Margin="4,0,4,0" DockPanel.Dock="Left">
-                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Source="pack://application:,,,/images/estate-default_100.jpg" Stretch="Uniform" StretchDirection="Both"/>
-                </Border>
-                <TextBlock DockPanel.Dock="Top" Text="{Binding Title, FallbackValue=Ceid Estate}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,19,0,0" FontSize="20"/>
-                <TextBlock DockPanel.Dock="Top" Text="Patras, University" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,1,0,0" FontSize="12" FontStyle="Italic"/>
-            </DockPanel>
-            <!--<StackPanel Grid.Column="0" Orientation="Horizontal" Height="86">
-                    <Border Width="86" Height="86" Margin="4,0,4,0">
+                <DockPanel Height="86">
+                    <Border Width="86" Height="86" Margin="4,0,4,0" DockPanel.Dock="Left">
                         <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Source="pack://application:,,,/images/estate-default_100.jpg" Stretch="Uniform" StretchDirection="Both"/>
                     </Border>
-                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <TextBlock Text="{Binding Title, FallbackValue=Ceid Estate}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="22"/>
-                    </Grid>
-                </StackPanel>-->
+                    <TextBlock DockPanel.Dock="Left" Text="{Binding Username, FallbackValue=At Sea Management}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="20"/>
+                <TextBlock DockPanel.Dock="Right" Text="(300)" VerticalAlignment="Center" Margin="4,0,0,0" FontSize="10" FontStyle="Italic" HorizontalAlignment="Right"/>
+                <local:Rating DockPanel.Dock="Right" Width="78" VerticalAlignment="Center" Margin="4,0,-5,0" HorizontalAlignment="Right" Height="14"/>
+
+                </DockPanel>
                 <Button Grid.Row="0" Grid.Column="1" Margin="8,4,8,4" Height="35px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0" Click="Button_Click">
                     <TextBlock x:Name="btn_Text" Foreground="White" Text="From Constructor"/>
                 </Button>

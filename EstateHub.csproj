@@ -34,4 +34,16 @@
     <Folder Include="views\manager\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="views\ManagerElementControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="views\ManagerElementControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>
