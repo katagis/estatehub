@@ -31,14 +31,12 @@ namespace EstateHub.model
         }
 
         public List<Estate> GetUnadvertisedEstates() {
-            // TODO:
-            return new List<Estate>();
+            return Estates.FindAll((Estate est) => !est.IsBeingAdvertised());
         }
 
         // Estates that are not under a deal
         public List<Estate> FindFreeEstates() {
-            // TODO:
-            return new List<Estate>();
+            return Estates.FindAll((Estate est) => est.CurrentDeal is null || est.CurrentDeal.HasExpired());
         }
     }
 }

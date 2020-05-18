@@ -15,7 +15,12 @@ namespace EstateHub.model
         }
 
         Review GetReviewFrom(Owner owner) {
-            return null; // TODO:
+            foreach (var rev in Reviews) {
+                if (rev.FromOwner == owner) {
+                    return rev;
+                }
+            }
+            return null;
         }
     }
 

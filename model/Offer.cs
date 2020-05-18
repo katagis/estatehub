@@ -11,8 +11,11 @@ namespace EstateHub.model
         public int EndingSeason;
         public int Money;
 
+
         public void AcceptOffer() {
-            // TODO:
+            Deal d = (Deal)MemberwiseClone();
+            d.UpdateExpiration();
+            // TODO: Add notification to offerer
         }
              
     }
