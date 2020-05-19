@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Media.Converters;
 
 namespace EstateHub.model
 {
@@ -10,11 +11,20 @@ namespace EstateHub.model
         public List<Estate> ViewHistory { get; } = new List<Estate>();
         public List<Review> Reviews { get; } = new List<Review>();
 
+        public List<Deal> CurrentDeals { get; private set; } = new List<Deal>();
+
         public Manager(string name) : base(name) {
             Estatehub.RegisterManager(this);
         }
 
-        Review GetReviewFrom(Owner owner) {
+        public void PromoteToDeal(Offer offerToRemove, Deal dealToAdd) {
+            Offers.Remove(offerToRemove);
+            CurrentDeals.Add(dealToAdd);
+            // TODO: Add notification to manager
+
+        }
+
+        public Review GetReviewFrom(Owner owner) {
             foreach (var rev in Reviews) {
                 if (rev.FromOwner == owner) {
                     return rev;

@@ -15,7 +15,9 @@ namespace EstateHub.model
         public void AcceptOffer() {
             Deal d = (Deal)MemberwiseClone();
             d.UpdateExpiration();
-            // TODO: Add notification to offerer
+            estate.CurrentDeal = d;
+            estate.ActiveOffers.Remove(this);
+            Offerer.PromoteToDeal(this, d);
         }
              
     }

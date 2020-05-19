@@ -7,7 +7,7 @@ namespace EstateHub.model
 {
     public class Estate {
         public Owner Owner { get; private set; }
-        public Deal CurrentDeal { get; private set; }
+        public Deal CurrentDeal { get; set; }
         public Location Location { get; private set; }
         public List<Offer> ActiveOffers { get; private set; } = new List<Offer>();
         public int ViewCount { get; private set; } = 0;
