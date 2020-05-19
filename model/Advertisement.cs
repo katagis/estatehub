@@ -8,5 +8,10 @@ namespace EstateHub.model
     {
         public Estate ForEstate { get; }
         public int EndingSeason { get; }
+
+        public Advertisement(Estate est, int endingSeason) {
+            ForEstate = est;
+            EndingSeason = endingSeason;
+        }
     }
 }

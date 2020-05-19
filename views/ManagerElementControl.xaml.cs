@@ -29,10 +29,6 @@ namespace EstateHub.views
             SelectedCallback = callback;
         }
 
-        public ManagerElementControl() {
-            InitializeComponent();
-            DataContext = new Estate();
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
             SelectedCallback((Manager)DataContext);

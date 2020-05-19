@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
@@ -15,6 +16,12 @@ namespace EstateHub.model
 
         public string Title { get; set; } = "Ceid Estate";
 
+
+        public Estate(Owner owner, Location location, string title) {
+            Owner = owner;
+            Location = location;
+            Title  = title;
+        }
 
         public bool MatchesTerms(string terms) {
             return Location.MatchesTerms(terms)
@@ -44,6 +51,10 @@ namespace EstateHub.model
 
         public void AddAdvertisement(Advertisement newadvertisement) {
             Advertisement = newadvertisement;
+        }
+
+        public bool IsCurrentlyAvailable() {
+            return CurrentDeal == null || CurrentDeal.HasExpired();
         }
     }
 }

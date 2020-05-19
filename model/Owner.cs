@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Markup;
+using System.Windows.Media.Animation;
 
 namespace EstateHub.model
 {
@@ -17,15 +18,26 @@ namespace EstateHub.model
         public void AddDummyEstates() {
             Random r = new Random();
             for (int i = 0; i < 4; i++) {
-                var e = new Estate() { Title = "Estate " + r.Next() + "" };
+                var e = new Estate(this, new Location(r.Next()), "Estate " + r.Next() + "");
                 Estates.Add(e);
-
+                
                 Random random = new Random();
+
+                if (random.Next(0, 3) == 1) {
+                    e.AddAdvertisement(new Advertisement(e, 2021));
+                }
+
+
 
                 int num = random.Next(0, 5);
                 for (int j = 0; j < num; j++) {
                     int index = random.Next(0, Estatehub.Managers.Count - 1);
-                    e.ActiveOffers.Add(new Offer() { Money = random.Next(5000, 50000), EndingSeason = 2, estate = e, Offerer = Estatehub.Managers [index] });
+                    var offer = new Offer() { Money = random.Next(5000, 50000), EndingSeason = 2, Estate = e, Offerer = Estatehub.Managers [index] };
+                    e.ActiveOffers.Add(offer);
+
+                    if (e.IsCurrentlyAvailable() && random.Next(0, 3) == 1) {
+                        offer.AcceptOffer();
+                    }
                 }
             }
         }

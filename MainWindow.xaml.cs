@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using EstateHub.model;
+using EstateHub.views;
 
 namespace EstateHub
 {
@@ -43,6 +44,7 @@ namespace EstateHub
         private bool isRedirecting = false;
         private string nextRedirectionView = "";
 
+        private SearchResults lastSearch;
 
         public MainWindow() {
             var defaultUser = App.Instance.CurrentUser;
@@ -82,6 +84,10 @@ namespace EstateHub
             }
         }
 
+        public void ChangeView(Page page) {
+            ui_mainView.Content = page;
+        }
+
         private void UpdateNavFromList(List<(string Title, string ViewPath)> navViewList) {
             Func<string, string, Button> buildButton = (string name, string view) => {
                 var btn = new Button {
@@ -118,9 +124,14 @@ namespace EstateHub
         //
         // Search bar controller
         //
-        public void PerformSearch(string term) {
-            // TODO: perform search
-            MessageBox.Show("Searching for: " + term);
+        public void PerformSearch(string term, bool includeUnavailable) {
+            lastSearch  = Estatehub.Search(term, includeUnavailable);
+            if (lastSearch.IsEmpty()) {
+                MessageBox.Show("No results found for search: " + term);
+            }
+            else {
+                ChangeView(new SearchResultsPage(lastSearch));
+            }
         }
 
 
@@ -143,7 +154,8 @@ namespace EstateHub
 
         private void Ui_search_KeyDown(object sender, KeyEventArgs e) {
             if (e.Key == Key.Enter) {
-                PerformSearch(ui_search.Text.Trim());
+                bool unavail = ui_searchUnavailable.IsChecked is null ? false : (bool)ui_searchUnavailable.IsChecked;
+                PerformSearch(ui_search.Text.Trim(), unavail);
             }
         }
 

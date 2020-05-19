@@ -33,7 +33,7 @@
                         <TextBlock Text="{Binding Title, FallbackValue=Ceid Estate}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="22"/>
                     </Grid>
                 </StackPanel>-->
-                <Button Grid.Row="0" Grid.Column="1" Margin="8,4,8,4" Height="35px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0" Click="Button_Click">
+                <Button x:Name="btn_button" Grid.Row="0" Grid.Column="1" Margin="8,4,8,4" Height="35px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0" Click="Button_Click">
                     <TextBlock x:Name="btn_Text" Foreground="White" Text="From Constructor"/>
                 </Button>
             </Grid>

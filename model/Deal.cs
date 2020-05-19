@@ -9,9 +9,14 @@ namespace EstateHub.model
     {
         public int ExpirationYear { get; private set; }
 
-        public void UpdateExpiration() {
+        public Deal(Offer offer) {
+            Offerer = offer.Offerer;
+            Estate = offer.Estate;
+            EndingSeason = offer.EndingSeason;
             ExpirationYear = EndingSeason;
+            Money = offer.Money;
         }
+
         public bool HasExpired() {
             return ExpirationYear > DateTime.Now.Year;
         }

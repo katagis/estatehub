@@ -7,16 +7,15 @@ namespace EstateHub.model
     public class Offer 
     {
         public Manager Offerer { get; set; }
-        public Estate estate { get; set; }
+        public Estate Estate { get; set; }
         public int EndingSeason;
         public int Money;
 
 
         public void AcceptOffer() {
-            Deal d = (Deal)MemberwiseClone();
-            d.UpdateExpiration();
-            estate.CurrentDeal = d;
-            estate.ActiveOffers.Remove(this);
+            Deal d = new Deal(this);
+            Estate.CurrentDeal = d;
+            Estate.ActiveOffers.Remove(this);
             Offerer.PromoteToDeal(this, d);
         }
              

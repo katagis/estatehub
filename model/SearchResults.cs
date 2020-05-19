@@ -6,15 +6,29 @@ namespace EstateHub.model
 {
     public class SearchResults
     {
-        public List<Estate> Estates { get; private set; }
-        public List<Advertisement> Advertisements { get; private set; }
+        public List<Estate> Estates { get; private set; } = new List<Estate>();
+        public List<Advertisement> Advertisements { get; private set; } = new List<Advertisement>();
         
-        public List<Estate> AdvertisedEstatesToShow { get; private set; }
+        public List<Estate> AdvertisedEstatesToShow { get; private set; } = new List<Estate>();
         public string Terms { get; private set; }
-        public SearchResults(List<Estate> estates, List<Advertisement> advertisements, string terms) {
-            Estates = estates;
-            Advertisements = advertisements;
+        public bool IncludeUnavailable { get; private set; }
+
+        public SearchResults(string terms, bool includeUnavailable) {
             Terms = terms;
+            IncludeUnavailable = includeUnavailable;
+
+            foreach (var owner in Estatehub.Owners) {
+                foreach (var estate in owner.Estates) {
+                    if (includeUnavailable || estate.IsCurrentlyAvailable()) {
+                        if (estate.IsBeingAdvertised()) {
+                            Advertisements.Add(estate.Advertisement);
+                        }
+                        else if (estate.MatchesTerms(terms)) {
+                            Estates.Add(estate);
+                        }
+                    }
+                }
+            }
         }
 
 

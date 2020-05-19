@@ -25,17 +25,30 @@ namespace EstateHub.views
         public EstateElementControl(Estate estate, string btnText, OnEstateSelected callback) {
             InitializeComponent();
             DataContext = estate;
-            btn_Text.Text =  btnText;
-            SelectedCallback = callback;
+            if (string.IsNullOrEmpty(btnText)) {
+                btn_button.Visibility = Visibility.Collapsed;
+            }
+            else if (btnText.StartsWith('_')){
+                btn_button.IsEnabled = false;
+                btn_Text.Text =  btnText.Substring(1);
+                btn_Text.Foreground = Brushes.Black;
+            }
+            else {
+                btn_Text.Text =  btnText;
+                SelectedCallback = callback;
+            }
         }
+
 
         public EstateElementControl() {
             InitializeComponent();
-            DataContext = new Estate();
+            DataContext = new Estate(null, new Location(55), "Ceid Estate");
         }
-
         private void Button_Click(object sender, RoutedEventArgs e) {
-            SelectedCallback((Estate)DataContext);
+            if (!(SelectedCallback.Method is null)) {
+                SelectedCallback((Estate)DataContext);
+            }
+            
         }
     }
 }

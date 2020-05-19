@@ -1,10 +1,19 @@
-﻿namespace EstateHub.model
+﻿using System;
+
+namespace EstateHub.model
 {
     public class Location
     {
         public string Address { get; private set; }
         public string Region { get; private set; }
         public string PostalCode { get; private set; }
+
+        public Location(int randomSeed) {
+            Address = "Addr " + randomSeed;
+            Region = "Region " + randomSeed * 109 % 19;
+            PostalCode = "AT" + (randomSeed % 119) * 100;
+        }
+
 
         public bool IsSameLocation(Location rhs) {
             return Address.Equals(rhs.Address, System.StringComparison.OrdinalIgnoreCase)

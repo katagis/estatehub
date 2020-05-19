@@ -29,7 +29,7 @@ namespace EstateHub.views
                 InitializeMenuList(MainWindow.navViews_Owner, null);
             }
             else {
-                InitializeMenuList(MainWindow.navViews_Manager, new Notification { Text = "Hello notifications!" });
+                InitializeMenuList(MainWindow.navViews_Manager, new Notification(App.Instance.CurrentUser, "Hello notifications!"));
             }
         }
 

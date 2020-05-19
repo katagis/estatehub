@@ -29,21 +29,8 @@ namespace EstateHub.model
             Locations.Add(location);
         }
 
-        public static SearchResults Search(string terms) {
-            List<Estate> matchedEstates = new List<Estate>();
-            List<Advertisement> advertisements = new List<Advertisement>();
-
-            foreach (var owner in Owners) {
-                foreach (var estate in owner.Estates) {
-                    if (estate.IsBeingAdvertised()) {
-                        advertisements.Add(estate.Advertisement);
-                    }
-                    else if (estate.MatchesTerms(terms)) {
-                        matchedEstates.Add(estate);
-                    }
-                }
-            }
-            return new SearchResults(matchedEstates, advertisements, terms);
+        public static SearchResults Search(string terms, bool includeUnavailable) {
+            return new SearchResults(terms, includeUnavailable);
         }
 
     }
