@@ -23,7 +23,7 @@
                     <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Source="pack://application:,,,/images/estate-default_100.jpg" Stretch="Uniform" StretchDirection="Both"/>
                 </Border>
                 <TextBlock DockPanel.Dock="Top" Text="{Binding Title, FallbackValue=Ceid Estate}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,19,0,0" FontSize="20"/>
-                <TextBlock DockPanel.Dock="Top" Text="Patras, University" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,1,0,0" FontSize="12" FontStyle="Italic"/>
+                <TextBlock DockPanel.Dock="Top" Text="{Binding Location.SubscriptText, FallbackValue=Patras}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,1,0,0" FontSize="12" FontStyle="Italic"/>
             </DockPanel>
             <!--<StackPanel Grid.Column="0" Orientation="Horizontal" Height="86">
                     <Border Width="86" Height="86" Margin="4,0,4,0">
