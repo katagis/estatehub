@@ -33,5 +33,9 @@ namespace EstateHub.model
             return new SearchResults(terms, includeUnavailable);
         }
 
+        public static bool DoesLocationExist(Location location) {
+            return !(Locations.Find(other => other.Equals(location)) is null);
+        }
+
     }
 }

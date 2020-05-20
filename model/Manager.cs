@@ -8,7 +8,7 @@ namespace EstateHub.model
     public class Manager : User
     {
         public List<Offer> Offers { get; } = new List<Offer>();
-        public List<Estate> ViewHistory { get; } = new List<Estate>();
+        public HashSet<Estate> ViewHistory { get; } = new HashSet<Estate>();
         public List<Review> Reviews { get; } = new List<Review>();
 
         public List<Deal> CurrentDeals { get; private set; } = new List<Deal>();
@@ -31,6 +31,10 @@ namespace EstateHub.model
                 }
             }
             return null;
+        }
+
+        public void AddToHistory(Estate estate) {
+            ViewHistory.Add(estate);
         }
     }
 

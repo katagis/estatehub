@@ -50,5 +50,9 @@ namespace EstateHub.model
         public List<Estate> FindFreeEstates() {
             return Estates.FindAll((Estate est) => est.CurrentDeal is null || est.CurrentDeal.HasExpired());
         }
+
+        public void RegisterEstate(Estate newEstate) {
+            Estates.Add(newEstate);
+        }
     }
 }

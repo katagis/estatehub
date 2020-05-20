@@ -4,14 +4,17 @@ namespace EstateHub.model
 {
     public class Location
     {
-        public string Address { get; private set; }
-        public string Region { get; private set; }
-        public string PostalCode { get; private set; }
+        public string Address { get; set; }
+        public string Region { get; set; }
+        public string PostalCode { get; set; }
+
+        public Location() {}
+
 
         public Location(int randomSeed) {
             Address = "Addr " + randomSeed;
             Region = "Region " + randomSeed * 109 % 19;
-            PostalCode = "AT" + (randomSeed % 119) * 100;
+            PostalCode = "" + (randomSeed % 119) * 100;
         }
 
 

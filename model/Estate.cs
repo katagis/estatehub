@@ -15,12 +15,13 @@ namespace EstateHub.model
         public Advertisement Advertisement{ get; private set; }
 
         public string Title { get; set; } = "Ceid Estate";
+        public string Description { get; set; }
 
-
-        public Estate(Owner owner, Location location, string title) {
+        public Estate(Owner owner, Location location, string title, string description = "") {
             Owner = owner;
             Location = location;
             Title  = title;
+            Description = description;
         }
 
         public bool MatchesTerms(string terms) {

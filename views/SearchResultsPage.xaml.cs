@@ -51,7 +51,15 @@ namespace EstateHub.views
         }
 
         public void OnEstateSelected(Estate estate) {
+            estate.IncrementViewCount();
+
+            var manager = App.GetCurrentManager();
+            if (!(manager is null)) {
+                manager.AddToHistory(estate);
+            }
+            
             MessageBox.Show(estate.Title);
+            // TODO: Transition to show estate
         }
     }
 }

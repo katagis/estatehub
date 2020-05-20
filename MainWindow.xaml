@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EstateHub"
         mc:Ignorable="d"
-        Title="MainWindow" Height="702" Width="1248" FontFamily="Segoe UI" FontSize="16" Foreground="#FF606771" MinWidth="500" MinHeight="300">
+        Title="EstateHub" Height="702" Width="1248" FontFamily="Segoe UI" FontSize="16" Foreground="#FF606771" MinWidth="500" MinHeight="300">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFF4F6FD" Offset="0"/>
