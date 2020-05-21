@@ -29,10 +29,10 @@ namespace EstateHub.model
 
 
 
-                int num = random.Next(0, 5);
+                int num = random.Next(0, 8);
                 for (int j = 0; j < num; j++) {
                     int index = random.Next(0, Estatehub.Managers.Count - 1);
-                    var offer = new Offer() { Money = random.Next(5000, 50000), EndingSeason = 2, Estate = e, Offerer = Estatehub.Managers [index] };
+                    var offer = new Offer() { Money = random.Next(5000, 50000), EndingSeason = random.Next(2020, 2021), Estate = e, Offerer = Estatehub.Managers [index] };
                     e.ActiveOffers.Add(offer);
 
                     if (e.IsCurrentlyAvailable() && random.Next(0, 3) == 1) {

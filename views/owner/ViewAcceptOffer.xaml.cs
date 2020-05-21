@@ -29,7 +29,6 @@ namespace EstateHub.views.owner
             bool foundEstates = false;
             foreach (var estate in o.Estates){
                 if (estate.CurrentDeal is null) {
-                    // TODO: Handle 0 offers
                     ui_estateList.Children.Add(new EstateElementControl(estate, "View " +  estate.ActiveOffers.Count + " offers", OnEstateSelected));
                     foundEstates = true;
                 }
@@ -40,7 +39,7 @@ namespace EstateHub.views.owner
             }
         }
 
-        void OnManagerSelected(Manager manager) {
+        void OnOfferSelected(Manager manager, Offer offer) {
 
         }
 
@@ -51,10 +50,12 @@ namespace EstateHub.views.owner
                 return;
             }
 
+            ui_subpageTitle.Text = "Accept offer for " + estate.Title + ":";
+
             ui_estateList.Children.Clear();
 
             foreach (var offer in estate.ActiveOffers) {
-                ui_estateList.Children.Add(new ManagerElementControl(offer.Offerer, "Accept offer", OnManagerSelected));
+                ui_estateList.Children.Add(new ManagerElementControl(offer.Offerer, "Accept offer", OnOfferSelected, offer));
             }
         }
 

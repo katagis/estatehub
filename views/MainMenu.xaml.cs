@@ -33,7 +33,7 @@ namespace EstateHub.views
             }
         }
 
-        private void InitializeMenuList(List<(string Title, string ViewPath)> list, Notification? notification) {
+        private void InitializeMenuList(List<(string Title, string ViewPath)> list, Notification notification) {
             // <Button x:Name="button" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0">
             //    <TextBlock x:Name="textBlock" Foreground="White" Text="Submit Estate"/>
             //</Button>

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EstateHub.views"
              mc:Ignorable="d" 
-             d:DesignHeight="85" d:DesignWidth="600">
+             d:DesignHeight="85" d:DesignWidth="600" FontFamily="Segoe UI" FontSize="16" Foreground="#FF606771">
         <Border BorderBrush="#FF798093" HorizontalAlignment="Stretch" BorderThickness="0,0,0,0" Margin="0,0,1,1">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -22,14 +22,24 @@
                     <Border Width="86" Height="86" Margin="4,0,4,0" DockPanel.Dock="Left">
                         <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Source="pack://application:,,,/images/estate-default_100.jpg" Stretch="Uniform" StretchDirection="Both"/>
                     </Border>
-                    <TextBlock DockPanel.Dock="Left" Text="{Binding Username, FallbackValue=At Sea Management}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="20"/>
-                <TextBlock DockPanel.Dock="Right" Text="(300)" VerticalAlignment="Center" Margin="4,0,0,0" FontSize="10" FontStyle="Italic" HorizontalAlignment="Right"/>
-                <local:Rating DockPanel.Dock="Right" Width="78" VerticalAlignment="Center" Margin="4,0,-5,0" HorizontalAlignment="Right" Height="14"/>
+                <DockPanel DockPanel.Dock="Bottom">
+                    <DockPanel DockPanel.Dock="Top" VerticalAlignment="Center" Margin="4,0,4,0">
+                        <TextBlock DockPanel.Dock="Left" Text="{Binding Username, FallbackValue=At Sea Management}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" FontSize="20"/>
+                        <TextBlock DockPanel.Dock="Right" Text="(300)" VerticalAlignment="Center" Margin="4,0,0,0" FontSize="10" FontStyle="Italic" HorizontalAlignment="Left"/>
+                        <local:Rating DockPanel.Dock="Right" Width="78" VerticalAlignment="Center" Margin="26,0,-5,0" HorizontalAlignment="Right" Height="14"/>
+                    </DockPanel>
 
                 </DockPanel>
-                <Button Grid.Row="0" Grid.Column="1" Margin="8,4,8,4" Height="35px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0" Click="Button_Click">
-                    <TextBlock x:Name="btn_Text" Foreground="White" Text="From Constructor"/>
+            </DockPanel>
+            <DockPanel Grid.Row="0" Grid.Column="1" Margin="8,4,8,4" >
+                <DockPanel x:Name="ui_offer" DockPanel.Dock="Top" VerticalAlignment="Top">
+                    <TextBlock x:Name="ui_offerSeasons" VerticalAlignment="Center" TextAlignment="Center" DockPanel.Dock="Bottom" FontSize="12" Margin="0,0,0,2" Text="2 seasons" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock x:Name="ui_offerAmount" TextAlignment="Right" DockPanel.Dock="Top" FontSize="18" FontWeight="Medium" Margin="0,-1,0,0" Text="50.000€" HorizontalAlignment="Center"></TextBlock>
+                </DockPanel>
+                <Button DockPanel.Dock="Bottom" Height="35px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Background="#FF798093" BorderThickness="0" Click="Button_Click">
+                    <TextBlock x:Name="btn_Text" Foreground="White" Text="From Constructor" FontSize="16" />
                 </Button>
-            </Grid>
+            </DockPanel>
+        </Grid>
         </Border>
 </UserControl>
