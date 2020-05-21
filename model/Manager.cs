@@ -36,6 +36,10 @@ namespace EstateHub.model
         public void AddToHistory(Estate estate) {
             ViewHistory.Add(estate);
         }
+
+        public void RegisterOffer(Offer offer) {
+            Offers.Add(offer);
+        }
     }
 
 }

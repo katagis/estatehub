@@ -16,7 +16,7 @@ namespace EstateHub.model
             Estatehub.RegisterUser(this);
         }
 
-        void RegisterNotification(Notification notification) {
+        public void RegisterNotification(Notification notification) {
             Notifications.Add(notification);
         }
 

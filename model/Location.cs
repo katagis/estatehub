@@ -10,6 +10,11 @@ namespace EstateHub.model
 
         public Location() {}
 
+        public string SubscriptText { 
+            get {
+                return Region + ", " + Address + ", " + PostalCode;
+            } 
+        }
 
         public Location(int randomSeed) {
             Address = "Addr " + randomSeed;

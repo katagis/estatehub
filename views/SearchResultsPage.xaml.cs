@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using EstateHub.model;
+using EstateHub.views.manager;
 
 namespace EstateHub.views
 {
@@ -20,11 +21,16 @@ namespace EstateHub.views
     public partial class SearchResultsPage : Page
     {
         private SearchResults Search;
+        
         public SearchResultsPage() {
-            InitializeComponent();
+            InitializePage(Estatehub.Search("", false));
         }
 
         public SearchResultsPage(SearchResults search) {
+            InitializePage(search);
+        }
+
+        public void InitializePage(SearchResults search) {
             Search = search;
             Search.Sort();
             InitializeComponent();
@@ -33,7 +39,7 @@ namespace EstateHub.views
                 if (App.Instance.CurrentUser is Manager) {
                     return est.IsCurrentlyAvailable() ? "Make Offer" : "_Unavailable";
                 }
-                return ""; 
+                return "";
             };
 
             ui_adList.Children.Clear();
@@ -56,10 +62,8 @@ namespace EstateHub.views
             var manager = App.GetCurrentManager();
             if (!(manager is null)) {
                 manager.AddToHistory(estate);
+                MainWindow.Instance.ChangeView(new CreateOffer(estate));
             }
-            
-            MessageBox.Show(estate.Title);
-            // TODO: Transition to show estate
         }
     }
 }
