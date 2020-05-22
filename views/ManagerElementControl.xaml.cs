@@ -40,8 +40,7 @@ namespace EstateHub.views
                 nfi.NumberGroupSeparator = ".";
                 ui_offerAmount.Text = offer.Money.ToString("N0", nfi) + " \x20AC";
 
-                int seasons = offer.EndingSeason - DateTime.Now.Year + 1;
-                ui_offerSeasons.Text = seasons + " " + ((seasons == 1) ? "season" : "seasons");
+                ui_offerSeasons.Text = offer.SeasonsLeft;
             }
         }
 

@@ -20,6 +20,7 @@ namespace EstateHub.views.owner
     /// </summary>
     public partial class ViewAcceptOffer : Page
     {
+        private Estate estateSelected;
         public ViewAcceptOffer() {
             InitializeComponent();
 
@@ -40,7 +41,16 @@ namespace EstateHub.views.owner
         }
 
         void OnOfferSelected(Manager manager, Offer offer) {
+            string msgTxt =
+                    "Are you sure you want to accept this offer for " + estateSelected.Title + "?\n" +
+                    "From: " + manager.Username + "\n" +
+                    "" + offer.SeasonsLeft + " for " + offer.Money + " \x20AC";
 
+            if (MessageBox.Show(msgTxt, "Accept Offer", MessageBoxButton.YesNo) ==  MessageBoxResult.Yes) {
+                offer.AcceptOffer();
+                MessageBox.Show("Offer accepted.");
+                MainWindow.Instance.ChangeView("views/MainMenu.xaml");
+            }
         }
 
         void OnEstateSelected(Estate estate) {
@@ -49,7 +59,7 @@ namespace EstateHub.views.owner
                 MessageBox.Show("No offers available for " + estate.Title);
                 return;
             }
-
+            estateSelected = estate;
             ui_subpageTitle.Text = "Accept offer for " + estate.Title + ":";
 
             ui_estateList.Children.Clear();

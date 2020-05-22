@@ -18,6 +18,13 @@ namespace EstateHub.model
             Estate.ActiveOffers.Remove(this);
             Offerer.PromoteToDeal(this, d);
         }
-             
+        
+        public string SeasonsLeft
+        {
+            get {
+                int seasons = EndingSeason - DateTime.Now.Year;
+                return seasons + " " + ((seasons == 1) ? "season" : "seasons");
+            }
+        }
     }
 }
