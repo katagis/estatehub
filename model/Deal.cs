@@ -18,7 +18,7 @@ namespace EstateHub.model
         }
 
         public bool HasExpired() {
-            return ExpirationYear > DateTime.Now.Year;
+            return ExpirationYear < DateTime.Now.Year;
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EstateHub.model;
 
 namespace EstateHub.views.owner
 {
@@ -20,6 +21,36 @@ namespace EstateHub.views.owner
     {
         public AdvertiseEstateList() {
             InitializeComponent();
+
+            var owner = App.GetCurrentOwner();
+
+            ui_estateList.Children.Clear();
+
+            if (owner.Estates.Count == 0) {
+                MessageBox.Show("No estates found.");
+                MainWindow.Instance.ChangeView("views/MainMenu.xaml");
+                return;
+            }
+
+            foreach (var estate in owner.Estates) {
+                string statusText;
+                if (!estate.IsCurrentlyAvailable()) {
+                    statusText = "_Already Managed";
+                }
+                else if (estate.IsBeingAdvertised()) {
+                    statusText = "_Already Advertised";
+                }
+                else {
+                    statusText = "Advertise";
+                }
+
+                ui_estateList.Children.Add(new EstateElementControl(estate, statusText, OnSelected));
+            }
         }
+
+        public void OnSelected(Estate estate) {
+            MainWindow.Instance.ChangeView(new AdvertiseEstate(estate));
+        }
+
     }
 }

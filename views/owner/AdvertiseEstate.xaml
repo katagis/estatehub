@@ -37,7 +37,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock x:Name="textBlock2" HorizontalAlignment="Right" Text="Card Number:" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="0"/>
                 <TextBlock x:Name="textBlock3" HorizontalAlignment="Right" Text="Seasons:" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1"/>
-                <TextBox x:Name="ui_cardnumber"    MaxLength="16" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="0000000000000000" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1" TextChanged="ui_cardnumber_TextChanged" Foreground="Gray"/>
+                <TextBox x:Name="ui_cardnumber"    MaxLength="16" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="0000000000000000" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1" TextChanged="ui_cardnumber_TextChanged" GotKeyboardFocus="ui_cardnumber_GotKeyboardFocus" Foreground="Gray"/>
                 <TextBox x:Name="ui_seasons"   MaxLength="1" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Text="" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1" TextChanged="ui_seasons_TextChanged"/>
                 <Button x:Name="ui_submit" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="45,5,45,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0" Click="ui_submit_Click">
                     <TextBlock x:Name="textBlock" Foreground="White" Text="Advertise Estate"/>

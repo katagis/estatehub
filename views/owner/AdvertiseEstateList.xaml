@@ -15,7 +15,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row ="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#FF798093" BorderBrush="#FF606771" Height="1" Margin="40,0,40,0"/>
-        <TextBlock x:Name="ui_subpageTitle" Grid.Row ="0" Text="My Estates:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="44,4,0,0" FontFamily="Calibri" FontSize="22"/>
+        <TextBlock x:Name="ui_subpageTitle" Grid.Row ="0" Text="Advertise Estates:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="44,4,0,0" FontFamily="Calibri" FontSize="22"/>
         <StackPanel x:Name="ui_estateList" Grid.Row ="1" VerticalAlignment="Top">
         </StackPanel>
     </Grid>
