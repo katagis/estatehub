@@ -15,12 +15,14 @@ namespace EstateHub.model
 
         private int sumReviews;
 
-        public float ReviewScore {
+        public string ReviewScore {
             get {
-                return sumReviews / Reviews.Count;
+                if (Reviews.Count > 0) {
+                    return ((float)sumReviews / Reviews.Count).ToString("0.0") + "/5";
+                }
+                return "~";
             }
         }
-
 
         public Manager(string name) : base(name) {
             Estatehub.RegisterManager(this);
