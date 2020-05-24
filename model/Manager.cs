@@ -51,6 +51,12 @@ namespace EstateHub.model
         }
 
         public void AddReview(Review review) {
+            var prevReview = GetReviewFrom(review.FromOwner);
+
+            if (!(prevReview is null)) {
+                sumReviews -= prevReview.Stars;
+                Reviews.Remove(prevReview);
+            }
             Reviews.Add(review);
             sumReviews += review.Stars;
         }

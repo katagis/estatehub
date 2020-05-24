@@ -52,7 +52,7 @@ namespace EstateHub.views.owner
             var oldReview = man.GetReviewFrom(owner);
             
             if (!(oldReview is null)) {
-                if (MessageBoxResult.No == MessageBox.Show("You already have a review for " + man.Username + ".\nDo you want to overwrite it?")) {
+                if (MessageBoxResult.No == MessageBox.Show("You already have a review for " + man.Username + ".\nDo you want to overwrite it?", "", MessageBoxButton.YesNo)) {
                     return;
                 }
             }
