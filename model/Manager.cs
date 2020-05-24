@@ -13,6 +13,15 @@ namespace EstateHub.model
 
         public List<Deal> CurrentDeals { get; private set; } = new List<Deal>();
 
+        private int sumReviews;
+
+        public float ReviewScore {
+            get {
+                return sumReviews / Reviews.Count;
+            }
+        }
+
+
         public Manager(string name) : base(name) {
             Estatehub.RegisterManager(this);
         }
@@ -39,6 +48,11 @@ namespace EstateHub.model
 
         public void RegisterOffer(Offer offer) {
             Offers.Add(offer);
+        }
+
+        public void AddReview(Review review) {
+            Reviews.Add(review);
+            sumReviews += review.Stars;
         }
     }
 

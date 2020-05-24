@@ -33,7 +33,8 @@ namespace EstateHub
         public static readonly List<(string Title, string ViewPath)> navViews_Owner = new List<(string, string)>{
                 ("Register Estate", "views/owner/RegisterEstateView.xaml"),
                 ("View Offers"    , "views/owner/ViewAcceptOffer.xaml"),
-                ("Advertise Estate"     , "views/owner/AdvertiseEstateList.xaml"),
+                ("Advertise Estate"   , "views/owner/AdvertiseEstateList.xaml"),
+                ("Review Manager"     , "views/owner/ReviewManagerList.xaml"),
         };
 
         public static readonly List<(string Title, string ViewPath)> navViews_Manager = new List<(string, string)>{

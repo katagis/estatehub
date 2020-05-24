@@ -6,10 +6,11 @@ namespace EstateHub.model
 {
     public class Review
     {
-        public string Comment { get; }
-        public int Stars { get; }
-        public Owner FromOwner { get; }
-        public Manager ForManager { get; }
+        public string Comment { get; set; }
+        public int Stars { get; set; }
+        public Owner FromOwner { get; set; }
+        public Manager ForManager { get; set; }
         
+
     }
 }

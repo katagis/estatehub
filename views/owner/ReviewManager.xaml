@@ -1,0 +1,37 @@
+﻿<Page x:Class="EstateHub.views.owner.ReviewManager"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EstateHub"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ReviewManager" ScrollViewer.CanContentScroll="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" MaxWidth="800" FontFamily="Segoe UI" FontSize="16" Foreground="#FF606771">
+    <Grid x:Name="mastergridView">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35px"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row ="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#FF798093" BorderBrush="#FF606771" Height="1" Margin="40,0,40,0"/>
+        <TextBlock x:Name="title" Grid.Row ="0" Text="Review Manager:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="44,4,0,0" FontFamily="Calibri" FontSize="22"/>
+        <Grid x:Name="FormGrid" Grid.Row="1" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35px"/>
+                <RowDefinition Height="135px"/>
+                <RowDefinition Height="50px"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Right" Text="Score:" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="0"/>
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Right" Text="Comment:" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Margin="4,4,0,0"/>
+            <TextBox x:Name="ui_score"          MaxLength="1" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="5,1,5,1" TextChanged="ui_score_TextChanged"/>
+            <TextBox x:Name="ui_comment"   MaxLength="160" MaxLines="12" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Text="" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" VerticalAlignment="Stretch" Margin="5,1,5,1"/>
+            <Button x:Name="ui_submit" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="45,5,45,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0" Click="ui_submit_Click">
+                <TextBlock x:Name="textBlock" Foreground="White" Text="Submit Review"/>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
