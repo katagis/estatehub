@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EstateHub.views"
              mc:Ignorable="d" 
-             d:DesignHeight="85" d:DesignWidth="600">
+             d:DesignHeight="85" d:DesignWidth="600" FontFamily="Segoe UI" FontSize="16" Foreground="#FF606771">
         <Border BorderBrush="#FF798093" HorizontalAlignment="Stretch" BorderThickness="0,0,0,0" Margin="0,0,1,1">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -25,15 +25,11 @@
                 <TextBlock DockPanel.Dock="Top" Text="{Binding Title, FallbackValue=Ceid Estate}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,19,0,0" FontSize="20"/>
                 <TextBlock DockPanel.Dock="Top" Text="{Binding Location.SubscriptText, FallbackValue=Patras}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,1,0,0" FontSize="12" FontStyle="Italic"/>
             </DockPanel>
-            <!--<StackPanel Grid.Column="0" Orientation="Horizontal" Height="86">
-                    <Border Width="86" Height="86" Margin="4,0,4,0">
-                        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Source="pack://application:,,,/images/estate-default_100.jpg" Stretch="Uniform" StretchDirection="Both"/>
-                    </Border>
-                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <TextBlock Text="{Binding Title, FallbackValue=Ceid Estate}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="22"/>
-                    </Grid>
-                </StackPanel>-->
-                <Button x:Name="btn_button" Grid.Row="0" Grid.Column="1" Margin="8,4,8,4" Height="35px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0" Click="Button_Click">
+            <DockPanel x:Name="ui_offerDetails" Height="86" Visibility="Collapsed">
+                <TextBlock x:Name="ui_offerSeasons" DockPanel.Dock="Top" Margin="4,23,4,0"  HorizontalAlignment="Right"  FontSize="12" Text="2 seasons"/>
+                <TextBlock x:Name="ui_offerAmount" DockPanel.Dock="Top" Margin="4,0,4,0"   HorizontalAlignment="Right"  FontSize="16" FontWeight="Medium" Text="50.000€"/>
+            </DockPanel>
+            <Button x:Name="btn_button" Grid.Row="0" Grid.Column="1" Margin="8,4,8,4" Height="35px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF798093" BorderThickness="0" Click="Button_Click">
                     <TextBlock x:Name="btn_Text" Foreground="White" Text="From Constructor"/>
                 </Button>
             </Grid>

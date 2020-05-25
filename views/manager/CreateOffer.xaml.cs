@@ -89,7 +89,7 @@ namespace EstateHub.views.manager
             estate.Owner.RegisterNotification(new Notification(estate.Owner, "New Offer")); // TODO: Offer notification
             manager.Offers.Add(offer);
 
-            MessageBox.Show("Offer registered for " + estate.Title, "", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Offer registered for " + estate.Title, "", MessageBoxButton.OK);
             MainWindow.Instance.ChangeView("views/MainMenu.xaml");
         }
 

@@ -39,7 +39,7 @@ namespace EstateHub
 
         public static readonly List<(string Title, string ViewPath)> navViews_Manager = new List<(string, string)>{
                 ("Search for Estates"   , "views/SearchResultsPage.xaml"),
-                ("Pending Offers"       , "views/manager/PendingOffersView.xaml"),
+                ("Pending Offers"       , "views/manager/PendingOffersList.xaml"),
         };
 
         private bool isRedirecting = false;
