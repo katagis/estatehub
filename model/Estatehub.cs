@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Runtime.ExceptionServices;
 using System.Text;
 
 namespace EstateHub.model
@@ -34,7 +35,7 @@ namespace EstateHub.model
         }
 
         public static bool DoesLocationExist(Location location) {
-            return !(Locations.Find(other => other.Equals(location)) is null);
+            return !(Locations.Find(other => other.IsSameLocation(location)) is null);
         }
 
     }

@@ -30,7 +30,6 @@ namespace EstateHub
             string region = ui_formRegion.Text;
             string postal = ui_formPostalCode.Text;
             string address = ui_formAddress.Text;
-            // TODO: Check for duplicate location, validate all input
 
             Func<string, string, bool> isEmpty = (string str, string fieldname) =>
             {

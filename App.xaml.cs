@@ -39,7 +39,6 @@ namespace EstateHub
         static public Manager GetCurrentManager() {
             if (!(Instance.CurrentUser is Manager)) {
                 MessageBox.Show("User session was not manager. Code requested a manager.");
-                // TODO: Get default manager user and return it.
             }
             return Instance.CurrentUser as Manager;
         }
@@ -47,7 +46,6 @@ namespace EstateHub
         static public Owner GetCurrentOwner() {
             if (!(Instance.CurrentUser is Owner)) {
                 MessageBox.Show("User session was not owner. Code requested a owner.");
-                // TODO: Get default owner user and return it.
             }
             return Instance.CurrentUser as Owner;
         }

@@ -10,10 +10,6 @@ namespace EstateHub.model
         public User ForUser { get; }
         public string Text { get; set; }
 
-        public delegate void OnFollow();
-
-        public OnFollow OnFollowDel{ get; }
-
         public Notification(User forUser, string text) {
             ForUser = forUser;
             Text = text;

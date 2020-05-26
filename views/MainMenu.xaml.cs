@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,11 +26,19 @@ namespace EstateHub.views
         }
 
         public void ReloadForCurrentUser() {
+            Notification notifToShow = null;
+            var notifList = App.Instance.CurrentUser.Notifications;
+            
+            if (notifList.Count > 0) {
+                notifToShow = notifList [0];
+                notifList.RemoveAt(0);
+            }            
+
             if (App.Instance.CurrentUser is Owner) {
-                InitializeMenuList(MainWindow.navViews_Owner, null);
+                InitializeMenuList(MainWindow.navViews_Owner, notifToShow);
             }
             else {
-                InitializeMenuList(MainWindow.navViews_Manager, new Notification(App.Instance.CurrentUser, "Hello notifications!"));
+                InitializeMenuList(MainWindow.navViews_Manager, notifToShow);
             }
         }
 
@@ -65,7 +74,7 @@ namespace EstateHub.views
             }
             else {
                 ui_contentGrid.Children.Add(notificationElem);
-                ui_successText.Text =  notification.Text;
+                ui_notificationTxt.Text =  notification.Text;
                 row = 1;
             }
 

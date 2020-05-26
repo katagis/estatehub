@@ -31,8 +31,7 @@ namespace EstateHub.model
         public void PromoteToDeal(Offer offerToRemove, Deal dealToAdd) {
             Offers.Remove(offerToRemove);
             CurrentDeals.Add(dealToAdd);
-            // TODO: Add notification to manager
-
+            dealToAdd.Offerer.Notifications.Add(new Notification(dealToAdd.Offerer, "Your offer for " + dealToAdd.Estate.Title + " has been accepted."));
         }
 
         public Review GetReviewFrom(Owner owner) {

@@ -86,7 +86,7 @@ namespace EstateHub.views.manager
 
             Offer offer = new Offer() { Offerer = manager, Estate = estate, EndingSeason = seasons +  DateTime.Now.Year, Money = amount };
             estate.ActiveOffers.Add(offer);
-            estate.Owner.RegisterNotification(new Notification(estate.Owner, "New Offer")); // TODO: Offer notification
+            estate.Owner.RegisterNotification(new Notification(estate.Owner, "You have a new offer for " + estate.Title));
             manager.Offers.Add(offer);
 
             MessageBox.Show("Offer registered for " + estate.Title, "", MessageBoxButton.OK);
