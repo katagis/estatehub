@@ -8,10 +8,10 @@ namespace EstateHub.model
 {
     class Estatehub
     {
-        public static List<User> Users { get; private set; } = new List<User>();
-        public static List<Owner> Owners { get; private set; } = new List<Owner>();
-        public static List<Manager> Managers { get; private set; } = new List<Manager>();
-        public static List<Location> Locations { get; private set; } = new List<Location>();
+        public static List<User> Users { get; } = new List<User>();
+        public static List<Owner> Owners { get; } = new List<Owner>();
+        public static List<Manager> Managers { get; } = new List<Manager>();
+        public static List<Location> Locations { get; } = new List<Location>();
 
         // Called automatically from the constructors of these classes.
         public static void RegisterUser(User user) {

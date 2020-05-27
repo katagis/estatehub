@@ -18,9 +18,9 @@ namespace EstateHub
     /// <summary>
     /// Interaction logic for SelectionPage.xaml
     /// </summary>
-    public partial class SelectionPage : Page
+    public partial class RegisterEstateView : Page
     {
-        public SelectionPage() {
+        public RegisterEstateView() {
             InitializeComponent();
         }
 
