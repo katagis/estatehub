@@ -21,9 +21,7 @@ namespace EstateHub.model
         }
 
         public override string ToString()  {
-            return Username;
+            return Username + " (" + GetType().Name + ")";
         }
-
-
     }
 }
