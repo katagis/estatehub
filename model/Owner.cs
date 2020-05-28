@@ -57,7 +57,7 @@ namespace EstateHub.model
                 for (int j = 0; j < num; j++) {
                     int index = random.Next(0, Estatehub.Managers.Count);
                     if (e.ActiveOffers.Find((offer) => { return offer.Offerer == Estatehub.Managers [index]; }) is null) {
-                        var offer = new Offer() { Money = random.Next(5000, 50000), EndingSeason = random.Next(2020, 2021), Estate = e, Offerer = Estatehub.Managers [index] };
+                        var offer = new Offer() { Money = random.Next(35, 50) * 1000, EndingSeason = random.Next(2021, 2022), Estate = e, Offerer = Estatehub.Managers [index] };
                         e.ActiveOffers.Add(offer);
                         offer.Offerer.RegisterOffer(offer);
 

@@ -40,6 +40,8 @@ namespace EstateHub
         public static readonly List<(string Title, string ViewPath)> navViews_Manager = new List<(string, string)>{
                 ("All Estates"          , "views/SearchResultsPage.xaml"),
                 ("Pending Offers"       , "views/manager/PendingOffersList.xaml"),
+                ("Current Estates"       , "views/manager/CurrentEstates.xaml"),
+                ("My Profile"       , "views/manager/MyProfile.xaml"),
         };
 
         private bool isRedirecting = false;
@@ -74,7 +76,9 @@ namespace EstateHub
                 ui_mainView.Content = Application.LoadComponent(resource);
             }
             catch {
-                MessageBox.Show("View not found: " + view);
+                MessageBox.Show("Not available in this demo app.");
+                isRedirecting = false;
+                return;
             }
             isRedirecting = false;
 
