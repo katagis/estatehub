@@ -38,7 +38,7 @@ namespace EstateHub
         };
 
         public static readonly List<(string Title, string ViewPath)> navViews_Manager = new List<(string, string)>{
-                ("Search for Estates"   , "views/SearchResultsPage.xaml"),
+                ("All Estates"          , "views/SearchResultsPage.xaml"),
                 ("Pending Offers"       , "views/manager/PendingOffersList.xaml"),
         };
 

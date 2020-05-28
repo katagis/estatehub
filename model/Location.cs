@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Documents;
 
 namespace EstateHub.model
 {
@@ -17,9 +18,18 @@ namespace EstateHub.model
         }
 
         public Location(int randomSeed) {
-            Address = "Addr " + randomSeed;
-            Region = "Region " + randomSeed * 109 % 19;
-            PostalCode = "" + (randomSeed % 119) * 100;
+            string[] addrs = {
+                "University",
+                "Center",
+                "Agia Sofia",
+                "Ovria",
+                "Psila Alonia",
+            };
+
+
+            Region = "Patra";
+            Address = addrs [randomSeed % addrs.Length] + " " + randomSeed % 119;
+            PostalCode = ((randomSeed % 19) * 100 + 320).ToString();
         }
 
 
