@@ -1,3 +1,6 @@
+![Estatehub Logo](/images/logo_800.png)
+
+
 # EstateHub
 
 Code for EstateHub Demo App, made for Software Engineering CEID course.
